@@ -15,7 +15,7 @@ spec:
       "5432": "postgre/postgre:5432" 
 ```
 
-The first port, represented as the key, is the incoming port to this machine. The value is in the format "\<namespace\>/\<service\>:\<port\>" and will direct traffic to that service. The service should then use a selector to find the right deployed application. In my case, my PostgreSQL objects all share a simple `app=postgresql` keyval to use for lookups.
+The first port, represented as the key, is the incoming port to this machine. The value is in the format `<namespace>/<service>:<port>` and will direct traffic to that service. The service should then use a selector to find the right deployed application. In my case, my PostgreSQL objects all share a simple `app=postgresql` keyval to use for lookups.
 
 This functionality also works for UDP ports, see the [Ingress Nginx](https://kubernetes.github.io/ingress-nginx/user-guide/exposing-tcp-udp-services/) documentation.
 
