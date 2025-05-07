@@ -1,0 +1,11 @@
+apiVersion: helm.cattle.io/v1
+kind: HelmChartConfig
+metadata:
+  name: rke2-ingress-nginx
+  namespace: kube-system
+  labels:
+    app: postgre
+spec:
+  valuesContent: |-
+    tcp:
+      "5432": "postgre/postgre:5432" 
